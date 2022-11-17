@@ -1,7 +1,7 @@
-// módulos
+// modules
 const express = require('express')
 const router = express.Router()
-// controladores
+// controllers
 const { getItems, getItem } = require('../controllers/items')
 
 router.get('/', getItems)
