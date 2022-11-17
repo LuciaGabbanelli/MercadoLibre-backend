@@ -1,14 +1,14 @@
-// módulos
+// modules
 const express = require('express')
 const cors = require('cors')
-// configuración
+// config
 const config = require('./config/config.js')
 
 const app = express()
 
 app.use(cors())
 
-// rutas
+// routes
 app.use('/api', require('./app/routes'))
 
 app.listen(config.PORT, config.HOST, () => {

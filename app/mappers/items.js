@@ -31,6 +31,8 @@ const mapperList = (data) => {
   let categories = []
   let items = []
 
+  // to get categories (improve?)
+  // TODO: move to helper file
   if (data?.filters && data?.filters[0]) {
     data?.filters[0]?.values[0]?.path_from_root?.forEach((e) => {
       categories.push(e.name)
@@ -50,7 +52,7 @@ const mapperList = (data) => {
       picture: e?.thumbnail,
       free_shipping: e?.shipping?.free_shipping,
       condition: e?.condition,
-      address: e?.address.state_name,
+      address: e?.address?.state_name,
     })
   })
   

@@ -11,23 +11,23 @@ const { mapperItem, mapperList } = require('../mappers/items')
 
 const getItem = async (req, res) => {
   try {
-    // obtener datos API externa
+    // get data API MILI
     const response = await responseItem(req.params.id)
     const description = await responseItemDescription(req.params.id)
 
-    // mapeo del objeto a formato pedido antes de responder
+    // mapping the object to the requested format before responding
     res.status(200).json(mapperItem(response, description))
   } catch (err) {
-    //handleError(res, err)
+    handleError(res, err)
   }
 }
 
 const getItems = async (req, res) => {
   try {
-    // obtener datos API externa
+    // get data API MILI
     const response = await responseList(req.query.q)
 
-    // mapeo del objeto a formato pedido antes de responder
+    // mapping the object to the requested format before responding
     res.status(200).json(mapperList(response))
   } catch (err) {
     handleError(res, err)

@@ -1,9 +1,8 @@
-// módulos
+// modules
 const axios = require('axios')
-// configuración
+// config
 const config = require('../../config/config')
 
-// llamadas a la API 
 const responseItem = async (id) => {
   try {
     const response = await axios({
